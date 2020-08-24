@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zQchbszyeJfdXaIUFRqisS/P8t6JAfNP7GXE5s/+SNE3ZSu5mbEc/HbYZE8YbelKhs6rc2YOGS3LkZVJEerfPQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\iyamu\\Documents\\DEV\\ASP_React\\200823\\ReactActivity\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\iyamu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\iyamu\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
