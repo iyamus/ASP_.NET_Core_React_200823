@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "I1JECbR8qNQG/d6i3BDunV9hOmuYR0oSYqVIqSvpgh6nLomSz52njisUWSDj2cY0MUhZX0ZoiMYXsi7j9Z88eA==",
+  "dgSpecHash": "SetgdMh03kkcMHZcDIT0ZOJrMhYTcucidtmWLuNfx5HQBv4cuAF+xs5Xu797Wkwp2YXZyKJFMMMze2t2Of1ypg==",
   "success": true,
   "projectFilePath": "C:\\Users\\iyamu\\Documents\\DEV\\ASP_React\\200823\\ReactActivity\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\iyamu\\.nuget\\packages\\mediatr\\7.0.0\\mediatr.7.0.0.nupkg.sha512",
+    "C:\\Users\\iyamu\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\7.0.0\\mediatr.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\iyamu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\iyamu\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\iyamu\\.nuget\\packages\\microsoft.data.sqlite.core\\3.1.0\\microsoft.data.sqlite.core.3.1.0.nupkg.sha512",

@@ -51,3 +51,5 @@ C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcor
 C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll

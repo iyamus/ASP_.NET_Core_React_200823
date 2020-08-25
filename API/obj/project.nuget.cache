@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "cjsSo2y09IxVAmlIZytbufen1aJ7WmDmhcmMpTQ3fx1V0kNNsZ1nZXVG2p4oac3JqqXXpDfoGfsYz6hTS4Hz/g==",
+  "dgSpecHash": "vONvczJGnhlQ4Io3FsNpOCUoTLvYlrBgUk184WU0BiAm78mfSmnc5Nek1cQXFnwwSwALG5F/ChTgVNGlPouRJA==",
   "success": true,
   "projectFilePath": "C:\\Users\\iyamu\\Documents\\DEV\\ASP_React\\200823\\ReactActivity\\API\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\iyamu\\.nuget\\packages\\mediatr\\7.0.0\\mediatr.7.0.0.nupkg.sha512",
+    "C:\\Users\\iyamu\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\7.0.0\\mediatr.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\iyamu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\iyamu\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\iyamu\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

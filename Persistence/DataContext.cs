@@ -18,12 +18,15 @@ namespace Persistence
         // prop 타입하고 tab을 눌러서 생성
         public DbSet<Value> Values { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder){
+        public DbSet<Activity> Activities { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
             builder.Entity<Value>().HasData(
-                new Value{Id = 1, Name="Value101"},
-                new Value{Id = 2, Name="Value102"},
-                new Value{Id = 3, Name="Value103"},
-                new Value{Id = 4, Name="Value104"}
+                new Value { Id = 1, Name = "Value101" },
+                new Value { Id = 2, Name = "Value102" },
+                new Value { Id = 3, Name = "Value103" },
+                new Value { Id = 4, Name = "Value104" }
             );
         }
 
