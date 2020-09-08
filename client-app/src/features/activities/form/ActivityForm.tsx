@@ -1,38 +1,56 @@
-import React, { useState, FormEvent, useContext } from "react";
+import React, { useState, FormEvent, useContext, useEffect } from "react";
 import { Segment, Form, Button } from "semantic-ui-react";
 import { IActivity } from "../../../app/models/activity";
 import { v4 as uuid } from "uuid";
 import ActivityStore from "../../../app/stores/activityStore";
 import { observer } from "mobx-react-lite";
+import { RouteComponentProps } from "react-router-dom";
 
-interface IProps {
-  selectedActivity: IActivity;
+interface DetailsParams {
+  id: string;
 }
 
-const ActivityForm: React.FC<IProps> = ({
-  selectedActivity,
+const ActivityForm: React.FC<RouteComponentProps<DetailsParams>> = ({
+  match,
+  history,
 }) => {
-
   const activityStore = useContext(ActivityStore);
-  const {createActivity, editActivity, submitting, cancelFormOpen}= activityStore;
+  const {
+    createActivity,
+    editActivity,
+    submitting,
+    activity: selectedActivity,
+    loadActivity,
+    clearActivity,
+  } = activityStore;
 
-  const initializeForm = () => {
-    if (selectedActivity) {
-      return selectedActivity;
-    } else {
-      return {
-        id: "",
-        title: "",
-        category: "",
-        description: "",
-        date: "",
-        city: "",
-        venue: "",
-      };
+  const [activity, setActivity] = useState<IActivity>({
+    id: "",
+    title: "",
+    category: "",
+    description: "",
+    date: "",
+    city: "",
+    venue: "",
+  });
+
+  useEffect(() => {
+    if (match.params.id && activity.id.length === 0) {
+      loadActivity(match.params.id).then(
+        () => selectedActivity && setActivity(selectedActivity)
+      );
     }
-  };
 
-  const [activity, setActivity] = useState<IActivity>(initializeForm);
+    return () => {
+      clearActivity();
+    };
+  }, [
+    loadActivity,
+    match.params.id,
+    clearActivity,
+    selectedActivity,
+    activity.id.length,
+  ]);
 
   const handleInputChange = (
     event: FormEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -47,11 +65,15 @@ const ActivityForm: React.FC<IProps> = ({
     if (activity.id.length === 0) {
       let newActivity = {
         ...activity,
-        id: uuid()
+        id: uuid(),
       };
-      createActivity(newActivity);
+      createActivity(newActivity).then(() =>
+        history.push(`/activities/${newActivity.id}`)
+      );
     } else {
-      editActivity(activity);
+      editActivity(activity).then(() =>
+        history.push(`/activities/${activity.id}`)
+      );
     }
   };
 
@@ -96,12 +118,18 @@ const ActivityForm: React.FC<IProps> = ({
           onChange={handleInputChange}
           name="venue"
         />
-        <Button loading={submitting} floated="right" positive type="submit" content="Submit" />
+        <Button
+          loading={submitting}
+          floated="right"
+          positive
+          type="submit"
+          content="Submit"
+        />
         <Button
           floated="right"
           type="button"
           content="Cancel"
-          onClick={cancelFormOpen}
+          onClick={()=> history.push('/activities')}
         />
       </Form>
     </Segment>

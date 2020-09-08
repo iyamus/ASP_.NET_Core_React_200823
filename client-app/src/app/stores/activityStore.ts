@@ -6,10 +6,8 @@ import agent from "../api/agent";
 configure({ enforceActions: "always" });
 
 class ActivityStore {
-  @observable activities: IActivity[] = [];
   @observable loadingInitial = false;
-  @observable selectedActivity: IActivity | undefined = undefined;
-  @observable editMode = false;
+  @observable activity: IActivity | null = null;
   @observable submitting = false;
   @observable activityRegistry = new Map();
   @observable target = "";
@@ -45,7 +43,6 @@ class ActivityStore {
       await agent.Activities.create(activity);
       runInAction("creating activity", () => {
         this.activityRegistry.set(activity.id, activity);
-        this.editMode = false;
         this.submitting = false;
       });
     } catch (error) {
@@ -57,13 +54,11 @@ class ActivityStore {
   };
 
   @action openCreateForm = () => {
-    this.editMode = true;
-    this.selectedActivity = undefined;
+    this.activity = null;
   };
 
   @action selectActivity = (id: string) => {
-    this.selectedActivity = this.activityRegistry.get(id);
-    this.editMode = false;
+    this.activity = this.activityRegistry.get(id);
   };
 
   @action editActivity = async (actvitity: IActivity) => {
@@ -72,8 +67,7 @@ class ActivityStore {
       await agent.Activities.update(actvitity);
       runInAction("editing activity", () => {
         this.activityRegistry.set(actvitity.id, actvitity);
-        this.selectedActivity = actvitity;
-        this.editMode = false;
+        this.activity = actvitity;
         this.submitting = false;
       });
     } catch (error) {
@@ -82,19 +76,6 @@ class ActivityStore {
         this.loadingInitial = false;
       });
     }
-  };
-
-  @action openEditForm = (id: string) => {
-    this.selectActivity = this.activityRegistry.get(id);
-    this.editMode = true;
-  };
-
-  @action cancelSelectedActivity = () => {
-    this.selectedActivity = undefined;
-  };
-
-  @action cancelFormOpen = () => {
-    this.editMode = false;
   };
 
   @action deleteActivity = async (
@@ -116,6 +97,35 @@ class ActivityStore {
         this.loadingInitial = false;
       });
     }
+  };
+
+  @action loadActivity = async (id: string) => {
+    let activity = this.getActivity(id);
+    if (activity) {
+      this.activity = activity;
+    } else {
+      this.loadingInitial = true;
+      try {
+        activity = await agent.Activities.detail(id);
+        runInAction("getting activity", () => {
+          this.activity = activity;
+          this.loadingInitial = false;
+        });
+      } catch (error) {
+        runInAction("getting activity error", () => {
+          console.log(error);
+          this.loadingInitial = false;
+        });
+      }
+    }
+  };
+
+  getActivity = (id: string) => {
+    return this.activityRegistry.get(id);
+  };
+
+  @action clearActivity = () => {
+    this.activity = null;
   };
 }
 
