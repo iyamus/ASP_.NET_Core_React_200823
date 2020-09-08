@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { Grid } from "semantic-ui-react";
 import { IActivity } from "../../../app/models/activity";
 import { ActivityList } from "./ActivityList";
@@ -12,9 +12,11 @@ interface IProps {
   editMode: boolean;
   setEditMode: (editMode: boolean) => void;
   setSelectedActivity: (activity: IActivity | null) => void;
-  createActivity: (activity: IActivity)=>void;
-  editActivity: (activity: IActivity)=>void;
-  deleteActivity: (id: string)=> void;
+  createActivity: (activity: IActivity) => void;
+  editActivity: (activity: IActivity) => void;
+  deleteActivity: (e: SyntheticEvent<HTMLButtonElement>, id: string) => void;
+  target: string;
+  submitting: boolean;
 }
 
 export const ActivityDashboard: React.FC<IProps> = ({
@@ -26,12 +28,20 @@ export const ActivityDashboard: React.FC<IProps> = ({
   setSelectedActivity,
   createActivity,
   editActivity,
-  deleteActivity
+  deleteActivity,
+  submitting,
+  target,
 }) => {
   return (
     <Grid>
       <Grid.Column width={10}>
-        <ActivityList activities={activities} selectActivity={selectActivity}  deleteActivity={deleteActivity}/>
+        <ActivityList
+          activities={activities}
+          selectActivity={selectActivity}
+          submitting={submitting}
+          deleteActivity={deleteActivity}
+          target={target}
+        />
       </Grid.Column>
       <Grid.Column width={6}>
         {selectedActivity && !editMode && (
@@ -39,7 +49,6 @@ export const ActivityDashboard: React.FC<IProps> = ({
             selectedActivity={selectedActivity}
             setEditMode={setEditMode}
             setSelectedActivity={setSelectedActivity}
-           
           />
         )}
         {/*  selectedActivity={selectedActivity!} 
@@ -54,6 +63,7 @@ Type 'IActivity | null' is not assignable to type 'IActivity'.
             createActivity={createActivity}
             editActivity={editActivity}
             key={selectedActivity && (selectedActivity.id || 0)}
+            submitting={submitting}
           />
         )}
       </Grid.Column>
