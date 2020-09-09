@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "THX2WI5SoHCA0//emqjbSM28lYa8Yb73PwIThBFhY9twfpwPz9KFNpJLK2D/H+n+YSjlpOU1tj9oGak7nji3dw==",
+  "dgSpecHash": "X6sL9d7LR+utFaKtj8x4oY/18PHgbff+tB7lIfaetmZlZpYJBTc1M/cDLGNrmgssC6rtfupZE+TUsz7sJ3/r+A==",
   "success": true,
   "projectFilePath": "C:\\Users\\iyamu\\Documents\\DEV\\ASP_React\\200823\\ReactActivity\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\iyamu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

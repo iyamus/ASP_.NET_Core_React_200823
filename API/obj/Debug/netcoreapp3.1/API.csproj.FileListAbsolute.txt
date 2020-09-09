@@ -53,3 +53,7 @@ C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcor
 C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\MediatR.dll
 C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\iyamu\Documents\DEV\ASP_React\200823\ReactActivity\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
